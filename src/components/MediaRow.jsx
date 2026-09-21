@@ -9,11 +9,14 @@ const MediaRow = (props) => {
       <td>
         <img src={item.thumbnail} alt={item.title} />
       </td>
+
       <td>{item.title}</td>
       <td>{item.description}</td>
+      <td>{item.username}</td>
       <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
+
       <td>
         <Link to="/single" state={{item}}>
           Show
@@ -24,7 +27,17 @@ const MediaRow = (props) => {
 };
 
 MediaRow.propTypes = {
-  item: PropTypes.object.isRequired,
+  item: PropTypes.shape({
+    media_id: PropTypes.number.isRequired,
+    filename: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
+    filesize: PropTypes.number.isRequired,
+    media_type: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    created_at: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default MediaRow;
