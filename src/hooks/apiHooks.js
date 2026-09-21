@@ -35,4 +35,61 @@ const useMedia = () => {
   return {mediaArray};
 };
 
-export {useMedia};
+const useAuthentication = () => {
+  const postLogin = async (inputs) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputs),
+    };
+
+    const result = await fetchData(
+      import.meta.env.VITE_AUTH_API + '/auth/login',
+      options
+    );
+
+    return result;
+  };
+
+  return {postLogin};
+};
+
+const useUser = () => {
+  const getUserByToken = async (token) => {
+    const options = {
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    };
+
+    const user = await fetchData(
+      import.meta.env.VITE_AUTH_API + '/users/token',
+      options
+    );
+
+    return user;
+  };
+
+  const postUser = async (inputs) => {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputs),
+    };
+
+    const result = await fetchData(
+      import.meta.env.VITE_AUTH_API + '/users',
+      options
+    );
+
+    return result;
+  };
+
+  return {getUserByToken, postUser};
+};
+
+export {useAuthentication, useMedia, useUser};
