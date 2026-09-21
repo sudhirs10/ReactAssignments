@@ -2,4 +2,4 @@
 
 This repository contains my React course assignments.
 
-Open [the Hooks application](https://users.metropolia.fi/~sudhirsh/hooks/) to view it in the browser.
+Open [the Custom Hooks application](https://users.metropolia.fi/~sudhirsh/custom-hooks/) to view it in the browser.
