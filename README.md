@@ -1,1 +1,1 @@
-Open [https://users.metropolia.fi/~sudhirsh/context/](https://users.metropolia.fi/~sudhirsh/context/) to view it in the browser.
+Open [https://users.metropolia.fi/~sudhirsh/upload/](https://users.metropolia.fi/~sudhirsh/upload/) to view it in the browser.
