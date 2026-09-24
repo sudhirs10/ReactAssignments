@@ -54,11 +54,45 @@ const useMedia = () => {
     return mediaResult;
   };
 
+  const deleteMedia = async (mediaId, token) => {
+    const fetchOptions = {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+    };
+
+    const deleteResult = await fetchData(
+      import.meta.env.VITE_MEDIA_API + '/media/' + mediaId,
+      fetchOptions,
+    );
+
+    return deleteResult;
+  };
+
+  const modifyMedia = async (mediaId, inputs, token) => {
+    const fetchOptions = {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
+      },
+      body: JSON.stringify(inputs),
+    };
+
+    const modifyResult = await fetchData(
+      import.meta.env.VITE_MEDIA_API + '/media/' + mediaId,
+      fetchOptions,
+    );
+
+    return modifyResult;
+  };
+
   useEffect(() => {
     getMedia();
   }, []);
 
-  return {mediaArray, postMedia};
+  return {mediaArray, postMedia, deleteMedia, modifyMedia};
 };
 
 const useAuthentication = () => {
