@@ -5,9 +5,13 @@ const MediaRow = (props) => {
   const {item} = props;
 
   return (
-    <tr>
+    <tr className="*:border *:border-gray-300 *:p-2.5 *:text-center">
       <td>
-        <img src={item.thumbnail} alt={item.title} />
+        <img
+          className="h-[130px] w-[180px] object-cover"
+          src={item.thumbnail}
+          alt={item.title}
+        />
       </td>
 
       <td>{item.title}</td>
@@ -18,7 +22,11 @@ const MediaRow = (props) => {
       <td>{item.media_type}</td>
 
       <td>
-        <Link to="/single" state={{item}}>
+        <Link
+          className="rounded bg-green-600 px-3 py-2 text-white no-underline hover:bg-green-700"
+          to="/single"
+          state={{item}}
+        >
           Show
         </Link>
       </td>

@@ -29,7 +29,7 @@ const Upload = () => {
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
     doUpload,
-    initValues
+    initValues,
   );
 
   const handleFileChange = (event) => {
@@ -41,12 +41,16 @@ const Upload = () => {
 
   return (
     <>
-      <h1>Upload</h1>
+      <h1 className="mb-4 text-3xl font-bold">Upload</h1>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title</label>
+      <form className="max-w-md" onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="mb-1 block" htmlFor="title">
+            Title
+          </label>
+
           <input
+            className="w-full rounded border border-gray-300 bg-white p-2"
             name="title"
             type="text"
             id="title"
@@ -54,9 +58,13 @@ const Upload = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="description">Description</label>
+        <div className="mb-3">
+          <label className="mb-1 block" htmlFor="description">
+            Description
+          </label>
+
           <textarea
+            className="w-full rounded border border-gray-300 bg-white p-2"
             name="description"
             rows={5}
             id="description"
@@ -64,9 +72,13 @@ const Upload = () => {
           ></textarea>
         </div>
 
-        <div>
-          <label htmlFor="file">File</label>
+        <div className="mb-4">
+          <label className="mb-1 block" htmlFor="file">
+            File
+          </label>
+
           <input
+            className="block w-full rounded border border-gray-300 bg-white p-2"
             name="file"
             type="file"
             id="file"
@@ -76,18 +88,19 @@ const Upload = () => {
         </div>
 
         <img
+          className="mb-4 h-[200px] w-[200px] object-cover"
           src={
             file
               ? URL.createObjectURL(file)
               : 'https://placehold.co/200?text=Choose+image'
           }
           alt="preview"
-          width="200"
         />
 
         <button
+          className="cursor-pointer rounded bg-blue-800 px-4 py-2.5 text-white hover:bg-blue-600 disabled:cursor-not-allowed disabled:bg-gray-400"
           type="submit"
-          disabled={file && inputs.title.length > 3 ? false : true}
+          disabled={!file || inputs.title.length <= 3}
         >
           Upload
         </button>

@@ -10,7 +10,7 @@ const Logout = () => {
 
   return (
     <>
-      <h1>Logout</h1>
+      <h1 className="mb-4 text-3xl font-bold">Logout</h1>
       <p>You have been logged out.</p>
     </>
   );

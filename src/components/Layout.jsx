@@ -12,7 +12,7 @@ const Layout = () => {
   return (
     <div>
       <nav>
-        <ul>
+        <ul className="mb-8 flex list-none gap-4 bg-blue-800 p-4 text-white *:rounded *:px-4 *:py-2 *:hover:bg-green-600">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -22,9 +22,11 @@ const Layout = () => {
               <li>
                 <Link to="/profile">Profile</Link>
               </li>
+
               <li>
                 <Link to="/upload">Upload</Link>
               </li>
+
               <li>
                 <Link to="/logout">Logout</Link>
               </li>

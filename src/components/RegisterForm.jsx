@@ -21,17 +21,21 @@ const RegisterForm = () => {
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
     doRegister,
-    initValues
+    initValues,
   );
 
   return (
     <>
-      <h1>Register</h1>
+      <h1 className="mb-4 text-3xl font-bold">Register</h1>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="registeruser">Username</label>
+      <form className="mb-4 max-w-md" onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="mb-1 block" htmlFor="registeruser">
+            Username
+          </label>
+
           <input
+            className="w-full rounded border border-gray-300 bg-white p-2"
             name="username"
             type="text"
             id="registeruser"
@@ -40,9 +44,13 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="registeremail">Email</label>
+        <div className="mb-3">
+          <label className="mb-1 block" htmlFor="registeremail">
+            Email
+          </label>
+
           <input
+            className="w-full rounded border border-gray-300 bg-white p-2"
             name="email"
             type="email"
             id="registeremail"
@@ -51,9 +59,13 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="registerpassword">Password</label>
+        <div className="mb-4">
+          <label className="mb-1 block" htmlFor="registerpassword">
+            Password
+          </label>
+
           <input
+            className="w-full rounded border border-gray-300 bg-white p-2"
             name="password"
             type="password"
             id="registerpassword"
@@ -62,7 +74,12 @@ const RegisterForm = () => {
           />
         </div>
 
-        <button type="submit">Register</button>
+        <button
+          className="cursor-pointer rounded bg-blue-800 px-4 py-2.5 text-white hover:bg-blue-600"
+          type="submit"
+        >
+          Register
+        </button>
       </form>
     </>
   );

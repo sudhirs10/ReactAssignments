@@ -1,95 +1,15 @@
-:root {
-  font-family: Arial, sans-serif;
-  color: black;
-  background-color: whitesmoke;
-}
+@import 'tailwindcss';
 
-body {
-  margin: 0;
-}
+@layer base {
+  :root {
+    @apply bg-gray-100 font-sans text-black;
+  }
 
-#root {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
+  body {
+    @apply m-0;
+  }
 
-nav ul {
-  display: flex;
-  gap: 10px;
-  padding: 0;
-  margin-bottom: 30px;
-  list-style: none;
-}
-
-nav a {
-  display: block;
-  padding: 10px 15px;
-  color: white;
-  background-color: navy;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background-color: royalblue;
-}
-
-table {
-  width: 100%;
-  background-color: white;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 10px;
-  border: 1px solid lightgray;
-  text-align: center;
-}
-
-th {
-  color: white;
-  background-color: navy;
-}
-
-td img {
-  width: 180px;
-  height: 130px;
-  object-fit: cover;
-}
-
-td a {
-  padding: 8px 12px;
-  color: white;
-  background-color: seagreen;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-td a:hover {
-  background-color: green;
-}
-
-main > img,
-main > video {
-  display: block;
-  width: 100%;
-  max-width: 800px;
-  max-height: 600px;
-  margin-bottom: 20px;
-  object-fit: contain;
-}
-
-button {
-  padding: 10px 15px;
-  color: white;
-  background-color: navy;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: royalblue;
+  #root {
+    @apply mx-auto max-w-6xl p-5;
+  }
 }

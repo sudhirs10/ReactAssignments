@@ -6,19 +6,35 @@ const Home = () => {
 
   return (
     <>
-      <h2>My Media</h2>
+      <h2 className="mb-4 text-2xl font-bold">My Media</h2>
 
-      <table>
+      <table className="w-full border-collapse bg-white">
         <thead>
           <tr>
-            <th>Thumbnail</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Owner</th>
-            <th>Created</th>
-            <th>Size</th>
-            <th>Type</th>
-            <th>Action</th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Thumbnail
+            </th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Title
+            </th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Description
+            </th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Owner
+            </th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Created
+            </th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Size
+            </th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Type
+            </th>
+            <th className="border border-gray-300 bg-blue-800 p-2.5 text-center text-white">
+              Action
+            </th>
           </tr>
         </thead>
 

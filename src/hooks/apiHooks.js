@@ -19,7 +19,7 @@ const useMedia = () => {
             ...item,
             username: user.username,
           };
-        })
+        }),
       );
 
       setMediaArray(mediaWithUsers);
@@ -48,7 +48,7 @@ const useMedia = () => {
 
     const mediaResult = await fetchData(
       import.meta.env.VITE_MEDIA_API + '/media',
-      fetchOptions
+      fetchOptions,
     );
 
     return mediaResult;
@@ -73,7 +73,7 @@ const useAuthentication = () => {
 
     const loginResult = await fetchData(
       import.meta.env.VITE_AUTH_API + '/auth/login',
-      fetchOptions
+      fetchOptions,
     );
 
     return loginResult;
@@ -92,7 +92,7 @@ const useUser = () => {
 
     const userResult = await fetchData(
       import.meta.env.VITE_AUTH_API + '/users/token',
-      fetchOptions
+      fetchOptions,
     );
 
     return userResult;
@@ -109,7 +109,7 @@ const useUser = () => {
 
     const userResult = await fetchData(
       import.meta.env.VITE_AUTH_API + '/users',
-      fetchOptions
+      fetchOptions,
     );
 
     return userResult;
@@ -133,7 +133,7 @@ const useFile = () => {
 
     const fileResult = await fetchData(
       import.meta.env.VITE_UPLOAD_SERVER + '/upload',
-      fetchOptions
+      fetchOptions,
     );
 
     return fileResult;

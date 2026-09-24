@@ -7,8 +7,8 @@ const Profile = () => {
     <div>
       {user && (
         <>
-          <h1>Profile</h1>
-          <p>Username: {user.username}</p>
+          <h1 className="mb-4 text-3xl font-bold">Profile</h1>
+          <p className="mb-2">Username: {user.username}</p>
           <p>Email: {user.email}</p>
         </>
       )}

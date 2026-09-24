@@ -19,17 +19,21 @@ const LoginForm = () => {
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
     doLogin,
-    initValues
+    initValues,
   );
 
   return (
     <>
-      <h1>Login</h1>
+      <h1 className="mb-4 text-3xl font-bold">Login</h1>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="loginuser">Username</label>
+      <form className="mb-4 max-w-md" onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="mb-1 block" htmlFor="loginuser">
+            Username
+          </label>
+
           <input
+            className="w-full rounded border border-gray-300 bg-white p-2"
             name="username"
             type="text"
             id="loginuser"
@@ -38,9 +42,13 @@ const LoginForm = () => {
           />
         </div>
 
-        <div>
-          <label htmlFor="loginpassword">Password</label>
+        <div className="mb-4">
+          <label className="mb-1 block" htmlFor="loginpassword">
+            Password
+          </label>
+
           <input
+            className="w-full rounded border border-gray-300 bg-white p-2"
             name="password"
             type="password"
             id="loginpassword"
@@ -49,7 +57,12 @@ const LoginForm = () => {
           />
         </div>
 
-        <button type="submit">Login</button>
+        <button
+          className="cursor-pointer rounded bg-blue-800 px-4 py-2.5 text-white hover:bg-blue-600"
+          type="submit"
+        >
+          Login
+        </button>
       </form>
     </>
   );
